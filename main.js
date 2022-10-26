@@ -33,14 +33,19 @@ function newBook() {
 
 /* creating new divs for each library item */
 function addDisplay() {
-    const bookDisplay = document.createElement("div");
-    bookDisplay.classList.add("bookDisplay");
+    const bookDisplay = document.createElement("bookDisplay");
+    bookDisplay.classList.add("bookDisplay" + myLibrary.length);
     theBook = myLibrary.slice(-1);
+
     bookDisplay.innerHTML = 
     "Title: " + theBook[0][0] + "<br>" + 
     "Author: " + theBook[0][1] + "<br>" + 
     "Pages: " + theBook[0][2] + "<br>" + 
-    "Read Status: " + theBook[0][3] + "<span></span>";
+    "Read Status: " + theBook[0][3] + 
+    "<button onclick='deleteBook(" +
+    myLibrary.length 
+    + ")'></button>";
+
     libContainer.appendChild(bookDisplay);
     
     formContainer.style.display = "none";
@@ -61,6 +66,13 @@ function clearLibrary() {
     while (element.firstChild) {
       element.removeChild(element.firstChild);
     }
+}
+
+/* function to delete selected card */
+function deleteBook(num) {
+    className = ".bookDisplay" + num;
+    let ele = document.querySelector(className);
+    ele.remove();
 }
 
 addDisplay();
