@@ -33,17 +33,17 @@
             <img src="./images/auto_stories.svg" alt="book">
                 <div class="field">
                     <label for="book_title">Book Title*</label>
-                    <input type="text" id="book_title" placeholder="Haikyuu!!..." required>
+                    <input type="text" id="book_title" placeholder="Haikyuu!!..." onfocus="this.value=''" required>
                 </div>
 
                 <div class="field">
                     <label for="author_name">Author Name*</label>
-                    <input type="text" id="author_name" placeholder="Haruichi Furudate..." required>
+                    <input type="text" id="author_name" placeholder="Haruichi Furudate..." onfocus="this.value=''" required>
                 </div>
 
                 <div class="field">
                     <label for="book_pages">Pages*</label>
-                    <input type="number" id="book_pages" placeholder="85..." required>
+                    <input type="number" id="book_pages" placeholder="85..." onfocus="this.value=''" required>
                 </div>
 
                     <div class="field">
@@ -64,7 +64,6 @@
                 </div>
                 <div class="button-container">
                     <button type="submit" onclick="newBook()">Submit</button>
-                    <button type="reset">Reset</button>
                 </div>
         </div>
     </div>

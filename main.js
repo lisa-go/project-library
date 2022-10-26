@@ -2,7 +2,7 @@ const libContainer = document.querySelector("#library-container");
 const formContainer = document.querySelector(".form-container");
 const formBg = document.querySelector(".form-background");
 
-let myLibrary = [["naruto", "sensei", "500", "Unread"]];
+let myLibrary = [];
 
 function Book(title, author, pages, readStatus) {
     this.title = title;
@@ -17,7 +17,8 @@ Book.prototype.addToLibrary = function() {
     myLibrary.push([this.title, this.author, this.pages, this.readStatus]);
 }
 
-    /* prompting user for new book info */
+
+    /* using user form values for new book info */
 function newBook() {
     title = document.querySelector("#book_title").value;
     author = document.querySelector("#author_name").value;
@@ -54,6 +55,7 @@ function addDisplay() {
     "<button onclick='changeRead(" +
     myLibrary.length 
     + ")'></button>" +
+
     "<button onclick='deleteBook(" +
     myLibrary.length 
     + ")'></button>";
@@ -89,11 +91,22 @@ function deleteBook(num) {
     ele.remove();
 }
 
-/* function to change read status */
+/* function to change to read */
 function changeRead(num) {
     className = ".readDisplay" + num;
     let ele = document.querySelector(className);
+    index = num - 1;
+
+    if (ele.textContent == "Read Status: Unread"){
     ele.textContent = "Read Status: Read";
+    myLibrary[index][3] = "Read";
+    }
+
+    else{
+    ele.textContent = "Read Status: Unread";
+    myLibrary[index][3] = "Unread";
+    }
+    console.log(myLibrary);
 }
 
-addDisplay();
+

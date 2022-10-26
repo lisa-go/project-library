@@ -35,7 +35,7 @@ bookDisplay {
     background-color: white;
     margin: 1rem;
     padding: 1rem;
-    width: 10rem;
+    min-width: 10rem;
     height: 13rem;
     border-radius: 15px;
     box-shadow: 0 5px 10px grey;
@@ -47,8 +47,8 @@ bookDisplay {
 
 btnDisplay button:first-child {
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     background-image: url(./images/done_all.svg);
     background-repeat: no-repeat;
     background-position: center;
@@ -58,8 +58,8 @@ btnDisplay button:first-child {
 
 btnDisplay button:last-child {
     position: relative;
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     background-image: url(./images/delete.svg);
     background-repeat: no-repeat;
     background-position: center;
