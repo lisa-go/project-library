@@ -9,11 +9,65 @@
     <title>Library</title>
 </head>
 <body>
-    <h1>Library</h1>
-    <button onclick="newBook()">Add Book</button>
+    <div id="header">
+        <img src="./images/local_library.svg" alt="logo" class="filter-blue">
+
+        <h1>Library</h1>
+
+        <div class="button-container">
+            <button type="button" onclick="openForm()">Add Book</button>
+            <button type="button" onclick="clearLibrary()">Clear Library</button>
+        </div>  
+
+    </div>
+
 
     <div id="library-container">
-        <!--.bookDisplay goes here**-->
+        <!--.bookDisplay goes here!-->
+    </div>
+
+
+        <!--form for adding new books!-->
+    <div class="form-background">
+        <div class="form-container">
+            <img src="./images/auto_stories.svg" alt="book">
+                <div class="field">
+                    <label for="book_title">Book Title*</label>
+                    <input type="text" id="book_title" placeholder="Haikyuu!!..." required>
+                </div>
+
+                <div class="field">
+                    <label for="author_name">Author Name*</label>
+                    <input type="text" id="author_name" placeholder="Haruichi Furudate..." required>
+                </div>
+
+                <div class="field">
+                    <label for="book_pages">Pages*</label>
+                    <input type="number" id="book_pages" placeholder="85..." required>
+                </div>
+
+                    <div class="field">
+                    <fieldset>
+                        <legend>Read / Unread*</legend>
+                    
+                        <div>
+                        <input type="radio" name="book_status" value="Read" required>
+                        <label for="book_read">Read</label>
+                        </div>
+                        
+                        <div>
+                        <input type="radio" name="book_status" value="Unread">
+                        <label for="book_unread">Unread</label>
+                        </div>
+                    </fieldset>
+                    
+                </div>
+                
+                <div class="button-container">
+                    <button type="submit" onclick="newBook()">Submit</button>
+                    <button type="reset">Reset</button>
+                </div>
+        </div>
     </div>
 </body>
 </html>
