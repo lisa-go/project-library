@@ -1,3 +1,12 @@
 body {
     background-color: #baa7f0;
 }
+
+.bookDisplay {
+    background-color: white;
+    margin: 1rem;
+    padding: 1rem;
+    width: fit-content;
+    border-radius: 15px;
+    box-shadow: 0 5px 10px black;
+}
