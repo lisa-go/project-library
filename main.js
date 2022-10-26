@@ -2,7 +2,7 @@ const libContainer = document.querySelector("#library-container");
 const formContainer = document.querySelector(".form-container");
 const formBg = document.querySelector(".form-background");
 
-let myLibrary = [["naruto", "sensei", "500", "Read"]];
+let myLibrary = [["naruto", "sensei", "500", "Unread"]];
 
 function Book(title, author, pages, readStatus) {
     this.title = title;
@@ -35,18 +35,32 @@ function newBook() {
 function addDisplay() {
     const bookDisplay = document.createElement("bookDisplay");
     bookDisplay.classList.add("bookDisplay" + myLibrary.length);
+    const readDisplay = document.createElement("readDisplay");
+    readDisplay.classList.add("readDisplay" + myLibrary.length);
+    const btnDisplay = document.createElement("btnDisplay");
+    btnDisplay.classList.add("btnDisplay" + myLibrary.length);
+
     theBook = myLibrary.slice(-1);
 
     bookDisplay.innerHTML = 
     "Title: " + theBook[0][0] + "<br>" + 
     "Author: " + theBook[0][1] + "<br>" + 
-    "Pages: " + theBook[0][2] + "<br>" + 
-    "Read Status: " + theBook[0][3] + 
+    "Pages: " + theBook[0][2] + "<br>";
+    
+    readDisplay.textContent =
+    "Read Status: " + theBook[0][3];
+    
+    btnDisplay.innerHTML =
+    "<button onclick='changeRead(" +
+    myLibrary.length 
+    + ")'></button>" +
     "<button onclick='deleteBook(" +
     myLibrary.length 
     + ")'></button>";
 
     libContainer.appendChild(bookDisplay);
+    bookDisplay.appendChild(readDisplay);
+    bookDisplay.appendChild(btnDisplay);
     
     formContainer.style.display = "none";
     formBg.style.display = "none";
@@ -73,6 +87,13 @@ function deleteBook(num) {
     className = ".bookDisplay" + num;
     let ele = document.querySelector(className);
     ele.remove();
+}
+
+/* function to change read status */
+function changeRead(num) {
+    className = ".readDisplay" + num;
+    let ele = document.querySelector(className);
+    ele.textContent = "Read Status: Read";
 }
 
 addDisplay();

@@ -45,7 +45,18 @@ bookDisplay {
     align-items: center;
 }
 
-bookDisplay button {
+btnDisplay button:first-child {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-image: url(./images/done_all.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 70%;
+    border: none;
+}
+
+btnDisplay button:last-child {
     position: relative;
     width: 50px;
     height: 50px;
@@ -53,6 +64,14 @@ bookDisplay button {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 70%;
+    border: none;
+}
+
+readDisplay {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .form-background {
