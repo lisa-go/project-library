@@ -6,6 +6,7 @@ body {
     font-size: 1rem;
     padding: 0;
     margin: 0;
+    word-break: break-all;
 }
 #header {
     background-color: white;
@@ -36,7 +37,9 @@ bookDisplay {
     margin: 1rem;
     padding: 1rem;
     min-width: 10rem;
-    height: 13rem;
+    width: 10rem;
+    min-height: 13rem;
+    overflow: auto;
     border-radius: 15px;
     box-shadow: 0 5px 10px grey;
     display: flex;

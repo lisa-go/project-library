@@ -17,7 +17,6 @@ Book.prototype.addToLibrary = function() {
     myLibrary.push([this.title, this.author, this.pages, this.readStatus]);
 }
 
-
     /* using user form values for new book info */
 function newBook() {
     title = document.querySelector("#book_title").value;
@@ -30,7 +29,6 @@ function newBook() {
 
     addDisplay();
 }
-
 
 /* creating new divs for each library item */
 function addDisplay() {
@@ -72,7 +70,12 @@ function addDisplay() {
 function openForm() {
     formContainer.style.display = "flex";
     formBg.style.display = "flex";
-    console.log (myLibrary);
+}
+
+/* function to close form */
+function closeForm() {
+    formContainer.style.display = "none";
+    formBg.style.display = "none";
 }
 
 /* function to clear library */
@@ -106,7 +109,4 @@ function changeRead(num) {
     ele.textContent = "Read Status: Unread";
     myLibrary[index][3] = "Unread";
     }
-    console.log(myLibrary);
 }
-
-
