@@ -159,3 +159,13 @@ button:hover {
 .filter-blue {
     filter: invert(79%) sepia(21%) saturate(881%) hue-rotate(157deg) brightness(92%) contrast(92%);
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#header a img {
+    width: 1.6rem;
+    height: auto;
+}
