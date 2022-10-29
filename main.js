@@ -4,14 +4,16 @@ const formBg = document.querySelector(".form-background");
 
 let myLibrary = [];
 
-function Book(title, author, pages, readStatus) {
+class Book {
+    constructor(title, author, pages, readStatus) {
     this.title = title;
     this.author = author;
     this.pages = pages;
     this.readStatus = readStatus;
 }
+}
 
-Book.prototype = Object.create(Book.prototype);
+let book = new Book(this.title, this.author, this.pages, this.readStatus);
 
 Book.prototype.addToLibrary = function() {
     myLibrary.push([this.title, this.author, this.pages, this.readStatus]);
